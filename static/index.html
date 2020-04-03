@@ -54,6 +54,8 @@
             border-radius: 20px;
         }
 
+        .max >
+
         .legend {
             grid-column-start: sec;
             grid-column-end: sec;
@@ -61,33 +63,47 @@
         }
 
         .bubble {
-            height: 30px;
+            position:relative;
+            height: 40px;
             width: 50px;
-            background-color: #81ecec;
-            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-            padding-left: 50px;
-            padding-top: 10px;
+            background-color: #27ae60;
+            clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 100%, 0% 100%);
+        }
+
+        .bubble-text{
+            position: absolute;
+            bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            width: 50px;
+            text-align: center;
         }
 
         .max {
             position: absolute;
-            top: -20px;
+            right: -9px;
+            color: #ecf0f1;
+            background-color: #d35400;
         }
+
 
         .current {
             position: absolute;
             top: -6px;
-            background-color: #fdcb6e;
+            background-color: #f1c40f;
         }
 
         .target {
             position: absolute;
             bottom: 150px;
+            background-color: #27ae60;
         }
 
-        .min {
+        .semi {
             position: absolute;
             bottom: -20px;
+            background-color: #2980b9;
+            color: #ecf0f1;
         }
 
     </style>
@@ -108,9 +124,9 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row mt-5">
 
-    <div class="col-5">
+    <div class="col-12">
         <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="110"></div>
             <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -119,10 +135,14 @@
 
     </div>
 
-    <div class="col-7">
-
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="bubble max"><span class="bubble-text">110</span></div>
+        <div class="bubble current"><span class="bubble-text">106.7</span></div>
+        <div class="bubble target"><span class="bubble-text">85</span></div>
+        <div class="bubble semi"><span class="bubble-text">100</span></div>
     </div>
-
 </div>
 
 
