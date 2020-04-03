@@ -1,0 +1,106 @@
+
+
+.container {
+    display: grid;
+    grid-template-columns: [cfir] 15% [csec] auto;
+    grid-template-rows: 100%;
+}
+
+.wg {
+    position: relative;
+    display: grid;
+    grid-template-columns: [fir] 40px [sec] auto;
+    grid-template-rows: 100%;
+    grid-column-start: cfir;
+    grid-column-end: cfir;
+    grid-row: 1;
+}
+
+.wg-outer {
+    position: relative;
+    width: 20px;
+    height: 400px;
+    background-color: transparent;
+    border: 5px solid #b2bec3;
+    border-radius: 20px;
+    grid-column-start: fir;
+    grid-column-end: fir;
+    grid-row: 1;
+}
+
+.wg-inner {
+    position: absolute;
+    bottom: 0;
+    background-color: #0984e3;
+    width: 20px;
+    height: 394px;
+    border-radius: 20px;
+}
+
+.legend {
+    grid-column-start: sec;
+    grid-column-end: sec;
+    grid-row: 1;
+}
+
+.bubble {
+    height: 30px;
+    width: 50px;
+    background-color: #81ecec;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+.max {
+    position: absolute;
+    top: -20px;
+}
+
+.current {
+    position: absolute;
+    top: -6px;
+    background-color: #fdcb6e;
+}
+
+.target {
+    position: absolute;
+    bottom: 150px;
+}
+
+.min {
+    position: absolute;
+    bottom: -20px;
+}
+
+.numbers {
+    grid-column-start: csec;
+    grid-column-end: csec;
+    grid-row: 1;
+}
+
+.numbers-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.numbers-list-item {
+    height: 1.75em;
+    font-size: 2em;
+}
+
+.label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    width: 5em;
+    float: left;
+}
+
+.challenge {
+    margin-top: 3em;
+    font-size: 2em;
+}
+
+.challenge-label {
+    width: 10em;
+}
