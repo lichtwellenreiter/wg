@@ -1,9 +1,10 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
 
-
-.container {
-    display: grid;
-    grid-template-columns: [cfir] 15% [csec] auto;
-    grid-template-rows: 100%;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
 }
 
 .wg {
@@ -37,6 +38,8 @@
     border-radius: 20px;
 }
 
+.max >
+
 .legend {
     grid-column-start: sec;
     grid-column-end: sec;
@@ -44,63 +47,44 @@
 }
 
 .bubble {
-    height: 30px;
-    width: 50px;
-    background-color: #81ecec;
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-    padding-left: 50px;
-    padding-top: 10px;
+    position:relative;
+    height: 40px;
+    width: 55px;
+    background-color: #27ae60;
+    clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 100%, 0% 100%);
+}
+
+.bubble-text{
+    position: absolute;
+    bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    width: 55px;
+    text-align: center;
 }
 
 .max {
     position: absolute;
-    top: -20px;
+    right: -9px;
+    color: #ecf0f1;
+    background-color: #d35400;
 }
+
 
 .current {
     position: absolute;
-    top: -6px;
-    background-color: #fdcb6e;
+    background-color: #f1c40f;
+    left: 86.8%;
 }
 
 .target {
     position: absolute;
-    bottom: 150px;
+    background-color: #27ae60;
 }
 
-.min {
+.semi {
     position: absolute;
-    bottom: -20px;
-}
-
-.numbers {
-    grid-column-start: csec;
-    grid-column-end: csec;
-    grid-row: 1;
-}
-
-.numbers-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.numbers-list-item {
-    height: 1.75em;
-    font-size: 2em;
-}
-
-.label {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    width: 5em;
-    float: left;
-}
-
-.challenge {
-    margin-top: 3em;
-    font-size: 2em;
-}
-
-.challenge-label {
-    width: 10em;
+    left: 60%;
+    background-color: #2980b9;
+    color: #ecf0f1;
 }

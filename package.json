@@ -1,8 +1,9 @@
 {
   "name": "weightgauge",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
+  "description": "A minimal weight tracking system",
+  "repository": "https://github.com/lichtwellenreiter/wg.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -24,6 +24,8 @@ app.use(bodyParser.urlencoded({
 let redis = require('redis')
 let client = redis.createClient(REDISPORT, REDISURL)
 
+
+
 client.on('connect', () => {
     console.log('Redis client connected to Redis Server on [' + REDISURL + ':' + REDISPORT + ']');
 });
@@ -54,8 +56,37 @@ app.get('/', (req, res) => {
     res.render("static/index.html")
 })
 
-app.get('/getAll', (req, res)=>{
+app.get('/getAll', (req, res) => {
+
+    let max = getKey('max')
+    let current = getKey('current');
+    let target = getKey('target');
+    let semi = getKey('semi');
+
+    res.json({
+        "max": max,
+        "current": current,
+        "target": target,
+        "semi": semi
+    })
 
 })
 
+app.get('/initredis', (req, res) => {
+    client.set('max', '110', redis.print)
+    client.set('current', '106.7', redis.print)
+    client.set('target', '85', redis.print)
+    client.set('semi', '100', redis.print)
+})
+
 app.listen(SERVERPORT, () => console.log(`server started on ${SERVERURL}:${SERVERPORT}`))
+
+function getKey(key) {
+    client.get(key, (error, response) => {
+        if (response) {
+            return response.toString()
+        } else {
+            console.error("Error Accessing REDIS Storage")
+        }
+    })
+}
