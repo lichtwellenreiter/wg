@@ -25,7 +25,6 @@ let redis = require('redis')
 let client = redis.createClient(REDISPORT, REDISURL)
 
 
-
 client.on('connect', () => {
     console.log('Redis client connected to Redis Server on [' + REDISURL + ':' + REDISPORT + ']');
 });
@@ -77,6 +76,36 @@ app.get('/initredis', (req, res) => {
     client.set('current', '106.7', redis.print)
     client.set('target', '85', redis.print)
     client.set('semi', '100', redis.print)
+    client.set('weekchallenge', 'No refined Sugar!', redis.print)
+    client.set('semireward', 'New Coffeemachine', redis.print)
+    res.json({
+        "msg": "done"
+    })
+})
+
+// Set this new Shit
+app.get('/setWeekchallenge/:challenge', (req, res) => {
+    console.log(req.params.challenge)
+    client.set('weekchallenge', req.params.challenge, redis.print)
+    res.redirect("/")
+})
+
+app.get('/setSemiReward/:reward', (req, res) => {
+    console.log(req.params.reward)
+    client.set('semireward', req.params.reward, redis.print)
+    res.redirect("/")
+})
+
+app.get('/setSemi/:semi', (req, res) => {
+    console.log(req.params.semi)
+    client.set('semi', req.params.semi, redis.print)
+    res.redirect("/")
+})
+
+app.get('/setCurrent/:current', (req, res) => {
+    console.log(req.params.current)
+    client.set('current', req.params.current, redis.print)
+    res.redirect("/")
 })
 
 app.listen(SERVERPORT, () => console.log(`server started on ${SERVERURL}:${SERVERPORT}`))
